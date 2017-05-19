@@ -1,0 +1,6 @@
+[package]
+name = "krs_ssl"
+version = "0.1.0"
+authors = ["Chris von Zuben <chris.vonzuben@gmail.com>"]
+
+[dependencies]

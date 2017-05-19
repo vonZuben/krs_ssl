@@ -1,0 +1,1 @@
+./config no-ssl2 no-ssl3 no-shared enable-ec_nistp_64_gcc_128 no-err no-srp
