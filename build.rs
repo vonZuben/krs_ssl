@@ -12,8 +12,6 @@ fn main() {
 
     Command::new("make")
         .args(&[
-            "-C".to_string(), 
-            "build".to_string(), 
             build_type])
         .status()
         .unwrap();

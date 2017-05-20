@@ -12,7 +12,7 @@ debug:
 release:
 	BUILD_FLAGS="-O2" ; make osl
 
-osl: libssl.a libcrypto.a
+osl: $(OSSLDIR)/libssl.a $(OSSLDIR)/libcrypto.a
 	gcc -c -fPIC $(BUILD_FLAGS) -o $(BUILDDIR)/osl.o $(SRCDIR)/ssl.c -I$(OSSLDIR)/include/openssl -L$(BUILDDIR) -lssl -lcrypto
 	ar rcs $(BUILDDIR)/libosl.a $(BUILDDIR)/osl.o
 
@@ -25,6 +25,7 @@ libcrypto.a: libssl.a
 	cp $(OSSLDIR)/$@ $(BUILDDIR)
 
 $(OSSLDIR)/config:
+	git submodule init
 	git submodule update
 
 wiefj_build:
