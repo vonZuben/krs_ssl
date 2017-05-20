@@ -33,6 +33,7 @@ extern {
 // need to allow dead code because we need to own the stream
 // even though we dont use it "directly"
 #[allow(dead_code)]
+#[derive(Debug)]
 pub struct OsslStream {
     ssl: *mut c_void,
     stream: TcpStream,
